@@ -9,7 +9,7 @@ const filePath = path.join(__dirname, 'items.json');
 const rawData = fs.readFileSync(filePath, 'utf-8');
 const items: string[] = JSON.parse(rawData).data;
 
-const typeDefs =`
+const typeDefs = `
   type Query {
     items: [String!]!
   }
