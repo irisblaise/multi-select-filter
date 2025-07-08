@@ -9,15 +9,21 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "install": "pnpm install",
-    "start": "pnpm run dev"
+    "start": "pnpm run dev",
+    "mock-server": "ts-node mock-server/mock-server.ts"
   },
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.23",
+    "graphql-yoga": "^5.14.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@graphql-yoga/node": "^3.9.1",
     "@tailwindcss/postcss": "^4.1.11",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
@@ -28,6 +34,7 @@
     "globals": "^16.2.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
+    "ts-node": "^10.9.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"
