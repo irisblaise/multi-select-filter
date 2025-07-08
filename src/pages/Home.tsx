@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { usePersistentState } from '../utils/usePersistentState';
 import MultiSelect from '../components/MultiSelect';
 import SelectedOverview from '../components/SelectedOverview';
 
 const Home = () => {
-  const [appliedCategories, setAppliedCategories] = useState<string[]>([]);
+  const [appliedCategories, setAppliedCategories] = usePersistentState<string[]>(
+    'appliedCategories',
+    []
+  );
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">

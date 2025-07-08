@@ -4,6 +4,7 @@ import { GET_ITEMS } from '../graphql/queries';
 import SearchInput from './SearchInput';
 import ItemList from './ItemList';
 import { decodeHtmlEntities } from '../utils/decodeHtmlEntities';
+import { usePersistentState } from '../utils/usePersistentState';
 
 interface MultiSelectProps {
   onApply?: (selected: string[]) => void;
@@ -11,7 +12,10 @@ interface MultiSelectProps {
 
 const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
   const [items, setItems] = useState<string[]>([]);
-  const [selected, setSelected] = useState<string[]>([]);
+  const [selected, setSelected] = usePersistentState<string[]>(
+    'appliedCategories',
+    [],
+  );
   const [search, setSearch] = useState('');
 
   useEffect(() => {
