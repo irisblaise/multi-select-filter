@@ -8,7 +8,7 @@ const SelectedOverview: React.FC<SelectedOverviewProps> = ({ categories }) => {
   if (categories.length === 0) {
     return (
       <div
-        className="bg-white border border-gray-200 rounded-2xl p-6 min-w-[250px] min-h-[100px] flex flex-col shadow-sm"
+        className="bg-white border border-gray-200 rounded-2xl p-6 min-w-[370px] min-h-[540px] max-h-[540px] w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xs flex flex-col shadow-sm mx-auto mb-4 sm:w-full sm:mx-0 sm:mb-0"
         role="region"
         aria-label="Geselecteerde categorieën overzicht"
       >
@@ -19,7 +19,7 @@ const SelectedOverview: React.FC<SelectedOverviewProps> = ({ categories }) => {
 
   return (
     <div
-      className="bg-white border border-gray-200 rounded-2xl p-6 min-w-[250px] min-h-[100px] flex flex-col shadow-sm gap-6"
+      className="bg-white border border-gray-200 rounded-2xl p-6 min-h-[540px] max-h-[540px] flex flex-col shadow-sm overflow-auto"
       role="region"
       aria-label="Geselecteerde categorieën overzicht"
     >
@@ -27,7 +27,7 @@ const SelectedOverview: React.FC<SelectedOverviewProps> = ({ categories }) => {
         <section key={cat} aria-labelledby={`cat-title-${cat}`}>
           <h2
             id={`cat-title-${cat}`}
-            className="text-xl font-bold mb-2 text-gray-900 text-left w-full"
+            className="text-xl font-bold mb-2 text-gray-900 text-left w-full break-words"
           >
             {cat}
           </h2>

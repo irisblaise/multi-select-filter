@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { gqlClient } from '../graphql/client';
-import { GET_ITEMS } from '../graphql/queries';
-import SearchInput from './SearchInput';
-import ItemList from './ItemList';
-import { decodeHtmlEntities } from '../utils/decodeHtmlEntities';
-import { usePersistentState } from '../utils/usePersistentState';
+import SearchInput from '../SearchInput/SearchInput';
+import { gqlClient } from '../../graphql/client';
+import { GET_ITEMS } from '../../graphql/queries';
+import ItemList from '../ItemList/ItemList';
+import { decodeHtmlEntities } from '../../utils/decodeHtmlEntities';
+import { usePersistentState } from '../../utils/usePersistentState';
 
 interface MultiSelectProps {
   onApply?: (selected: string[]) => void;
@@ -43,7 +43,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
 
   return (
     <div
-      className="bg-white border border-gray-200 rounded-2xl p-6 min-w-[370px] min-h-[540px] max-h-[540px] flex flex-col shadow-sm"
+      className="bg-white border border-gray-200 rounded-2xl p-6 min-h-[540px] max-h-[540px] flex flex-col shadow-sm"
       role="region"
       aria-label="Productgroep filter"
     >
