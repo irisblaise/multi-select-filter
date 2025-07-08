@@ -4,6 +4,7 @@ import { GET_ITEMS } from '../graphql/queries';
 import MultiSelect from '../components/MultiSelect';
 import SearchInput from '../components/SearchInput';
 import ItemList from '../components/ItemList';
+import { decodeHtmlEntities } from '../utils/decodeHtmlEntities';
 
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     gqlClient.request<{ items: string[] }>(GET_ITEMS)
       .then((data) => {
-        setItems(data.items);
+        setItems(data.items.map(decodeHtmlEntities));
       })
       .finally(() => setLoading(false));
   }, []);
