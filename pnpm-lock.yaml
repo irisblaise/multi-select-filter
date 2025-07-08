@@ -11,6 +11,12 @@ importers:
       '@graphql-tools/schema':
         specifier: ^10.0.23
         version: 10.0.23(graphql@16.11.0)
+      graphql:
+        specifier: ^16.11.0
+        version: 16.11.0
+      graphql-request:
+        specifier: ^7.2.0
+        version: 7.2.0(graphql@16.11.0)
       graphql-yoga:
         specifier: ^5.14.0
         version: 5.14.0(graphql@16.11.0)
@@ -1169,6 +1175,11 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  graphql-request@7.2.0:
+    resolution: {integrity: sha512-0GR7eQHBFYz372u9lxS16cOtEekFlZYB2qOyq8wDvzRmdRSJ0mgUVX1tzNcIzk3G+4NY+mGtSz411wZdeDF/+A==}
+    peerDependencies:
+      graphql: 14 - 16
 
   graphql-yoga@3.9.1:
     resolution: {integrity: sha512-BB6EkN64VBTXWmf9Kym2OsVZFzBC0mAsQNo9eNB5xIr3t+x7qepQ34xW5A353NWol3Js3xpzxwIKFVF6l9VsPg==}
@@ -2792,6 +2803,11 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graphemer@1.4.0: {}
+
+  graphql-request@7.2.0(graphql@16.11.0):
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.11.0)
+      graphql: 16.11.0
 
   graphql-yoga@3.9.1(graphql@16.11.0):
     dependencies:
