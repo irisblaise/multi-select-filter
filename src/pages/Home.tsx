@@ -21,7 +21,11 @@ const Home = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const filteredItems = items.filter(item => item.toLowerCase().includes(search.toLowerCase()));
+
+  const selectedFiltered = selected;
+  const unselectedFiltered = items.filter(
+    item => !selected.includes(item) && item.toLowerCase().includes(search.toLowerCase())
+  );
 
   const handleToggle = (item: string) => {
     setSelected((prev) =>
@@ -33,7 +37,18 @@ const Home = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <MultiSelect>
         <SearchInput value={search} onChange={setSearch} />
-        <ItemList items={filteredItems} selected={selected} onToggle={handleToggle} />
+        {selectedFiltered.length > 0 && (
+          <div className="mb-2">
+            <div className="text-xs text-gray-500 mb-1">Geselecteerd</div>
+            <ItemList items={selectedFiltered} selected={selected} onToggle={handleToggle} />
+          </div>
+        )}
+        <div>
+          {selectedFiltered.length > 0 && (
+            <div className="text-xs text-gray-500 mb-1">Overige opties</div>
+          )}
+          <ItemList items={unselectedFiltered} selected={selected} onToggle={handleToggle} />
+        </div>
         <button
           className="w-full mt-2 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
           onClick={() => {}}
