@@ -31,9 +31,8 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
     setSelected((prev) => {
       if (prev.includes(item)) {
         return prev.filter((i) => i !== item);
-      } else {
-        return [item, ...prev];
       }
+      return [item, ...prev];
     });
   };
 

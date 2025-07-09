@@ -15,9 +15,9 @@ const SelectedOverview: React.FC<SelectedOverviewProps> = ({ categories }) => {
         <span className="text-2xl font-bold text-gray-900">Geselecteerde Categorieën</span>
       </h2>
       {categories.length === 0 ? (
-        <span className="text-gray-400">Geen categorieën geselecteerd</span>
+        <span className="text-gray-500">Geen categorieën geselecteerd</span>
       ) : (
-        <div className="overflow-auto">
+        <div className="overflow-auto" tabIndex={0}>
           {categories.map((cat) => (
             <section className="mb-4" key={cat} aria-labelledby={`cat-title-${cat}`}>
               <h3

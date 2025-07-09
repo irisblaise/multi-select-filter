@@ -84,6 +84,16 @@ This project includes a mock GraphQL server using [GraphQL Yoga](https://the-gui
   - The app and Storybook will use this mock server for all GraphQL requests during development.
   - You can explore and test queries directly in the GraphiQL playground at the server URL (shown in your terminal after starting the server).
 
+## Development
+
+To start both the Vite dev server and the mock GraphQL server together, run:
+
+```
+pnpm start
+```
+
+This will launch both servers in parallel. The frontend will be available at the usual Vite dev URL (typically http://localhost:5173), and the mock GraphQL server will also be running.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
