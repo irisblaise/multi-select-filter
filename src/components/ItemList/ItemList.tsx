@@ -23,7 +23,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, selected, onToggle }) => (
             />
             {isChecked && (
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <span className="block size-3 bg-blue-600"/>
+                <span className="block size-3 bg-blue-600" />
               </span>
             )}
           </span>

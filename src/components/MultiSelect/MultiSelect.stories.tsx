@@ -26,7 +26,6 @@ export const Default: Story = {
       const applyButton = canvas.getByRole('button', { name: /toepassen/i });
       expect(applyButton).toBeDisabled();
       const items = await canvas.findAllByRole('listitem');
-      console.log('List items after typing:', items.map(i => i.textContent));
       if (items.length === 0) {
         throw new Error('No list items found after typing "boek".');
       }
