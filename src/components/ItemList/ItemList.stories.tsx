@@ -14,7 +14,7 @@ const meta: Meta<typeof ItemList> = {
 export default meta;
 type Story = StoryObj<typeof ItemList>;
 
-const mockData = ['Boek', 'Computer', 'Telefoon', 'Kunst']
+const mockData = ['Boek', 'Computer', 'Telefoon', 'Kunst'];
 
 export const Default: Story = {
   args: {
