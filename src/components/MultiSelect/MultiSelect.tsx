@@ -12,10 +12,7 @@ interface MultiSelectProps {
 
 const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
   const [items, setItems] = useState<string[]>([]);
-  const [selected, setSelected] = usePersistentState<string[]>(
-    'appliedCategories',
-    [],
-  );
+  const [selected, setSelected] = usePersistentState<string[]>('appliedCategories', []);
   const [search, setSearch] = useState('');
 
   useEffect(() => {

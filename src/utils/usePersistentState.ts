@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 export function usePersistentState<T>(
   key: string,
   initialValue: T,
-  storageType: 'local' | 'session' = 'local'
+  storageType: 'local' | 'session' = 'local',
 ): [T, React.Dispatch<React.SetStateAction<T>>] {
   const storage = storageType === 'local' ? localStorage : sessionStorage;
 

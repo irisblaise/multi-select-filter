@@ -5,11 +5,11 @@ import SelectedOverview from '../components/SelectedOverview/SelectedOverview';
 const Home = () => {
   const [appliedCategories, setAppliedCategories] = usePersistentState<string[]>(
     'appliedCategories',
-    []
+    [],
   );
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="flex flex-col lg:flex-row gap-8 w-[90%] max-w-5xl">
         <div className="w-[90%] lg:w-1/2 mx-auto lg:mx-0">
           <MultiSelect onApply={setAppliedCategories} />
