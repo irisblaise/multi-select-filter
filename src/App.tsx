@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './pages/Home';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (

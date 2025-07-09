@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import ItemList from './ItemList';
+import { fn, expect } from 'storybook/test';
 
 const meta: Meta<typeof ItemList> = {
   title: 'Components/ItemList',
@@ -13,23 +14,31 @@ const meta: Meta<typeof ItemList> = {
 export default meta;
 type Story = StoryObj<typeof ItemList>;
 
+const mockData = ['Boek', 'Computer', 'Telefoon', 'Kunst']
+
 export const Default: Story = {
   args: {
-    items: ['Apple', 'Banana', 'Orange', 'Pear'],
-    selected: ['Banana'],
+    items: mockData,
+    selected: ['Boek'],
+    onToggle: fn(),
+  },
+  play: async ({ canvas, userEvent, args }) => {
+    const book = canvas.getByText('Boek');
+    await userEvent.click(book);
+    expect(args.onToggle).toHaveBeenCalled();
   },
 };
 
 export const AllSelected: Story = {
   args: {
-    items: ['Apple', 'Banana', 'Orange', 'Pear'],
-    selected: ['Apple', 'Banana', 'Orange', 'Pear'],
+    items: mockData,
+    selected: ['Boek', 'Computer', 'Telefoon', 'Kunst'],
   },
 };
 
 export const NoneSelected: Story = {
   args: {
-    items: ['Apple', 'Banana', 'Orange', 'Pear'],
+    items: mockData,
     selected: [],
   },
 };

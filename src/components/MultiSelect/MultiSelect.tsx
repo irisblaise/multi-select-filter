@@ -65,7 +65,10 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
       <button
         type="button"
         className="w-full py-2 bg-gray-200 cursor-pointer text-gray-700 text-base font-medium rounded-lg hover:bg-gray-300 transition-colors disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
-        onClick={() => setSelected([])}
+        onClick={() => {
+          setSelected([]);
+          setSearch('');
+        }}
         aria-label="Selectie wissen"
         disabled={selected.length === 0}
       >

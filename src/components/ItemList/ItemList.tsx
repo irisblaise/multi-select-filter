@@ -19,7 +19,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, selected, onToggle }) => (
               onChange={() => onToggle(item)}
               id={item}
               aria-checked={isChecked}
-              className="appearance-none w-5 h-5 border-2 border-gray-300 bg-white checked:bg-white align-middle"
+              className="appearance-none w-5 h-5 border-2 border-gray-300 bg-white checked:bg-white align-middle hover:bg-gray-200"
             />
             {isChecked && (
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center">

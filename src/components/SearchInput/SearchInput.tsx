@@ -14,7 +14,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ value, onChange }) => (
     <input
       id="search-input"
       type="text"
-      role="searchbox"
+      role="textbox"
       aria-label="Zoek producten"
       className="w-full rounded-lg border border-gray-300 py-2 px-4 text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400"
       placeholder="Zoek..."
