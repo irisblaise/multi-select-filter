@@ -7,7 +7,7 @@ interface SelectedOverviewProps {
 const SelectedOverview: React.FC<SelectedOverviewProps> = ({ categories }) => {
   return (
     <div
-      className="bg-white border border-gray-200 rounded-2xl p-6 min-w-[370px] min-h-[540px] max-h-[540px] w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xs flex flex-col shadow-sm mx-auto mb-4 sm:w-full sm:mx-0 sm:mb-0"
+      className="bg-white border border-gray-200 rounded-2xl p-6 min-h-[540px] max-h-[540px] flex flex-col shadow-sm"
       role="region"
       aria-label="Geselecteerde categorieën overzicht"
     >
