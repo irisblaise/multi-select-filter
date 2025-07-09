@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchInput from '../SearchInput/SearchInput';
 import { gqlClient } from '../../graphql/client';
-import { GET_ITEMS } from '../../graphql/queries';
+import { GET_CATEGORIES } from '../../graphql/queries';
 import ItemList from '../ItemList/ItemList';
 import { decodeHtmlEntities } from '../../utils/decodeHtmlEntities';
 import { usePersistentState } from '../../utils/usePersistentState';
@@ -16,7 +16,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    gqlClient.request<{ items: string[] }>(GET_ITEMS).then((data) => {
+    gqlClient.request<{ items: string[] }>(GET_CATEGORIES).then((data) => {
       setItems(data.items.map(decodeHtmlEntities));
     });
   }, []);

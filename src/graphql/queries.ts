@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 
-export const GET_ITEMS = gql`
-  query GetItems {
+export const GET_CATEGORIES = gql`
+  query GetCategories {
     items
   }
 `;
