@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn, expect, waitFor } from 'storybook/test';
+import { expect, waitFor } from 'storybook/test';
 import MultiSelect from './MultiSelect';
 
 const meta: Meta<typeof MultiSelect> = {
