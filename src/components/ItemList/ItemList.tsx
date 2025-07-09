@@ -7,7 +7,7 @@ interface ItemListProps {
 }
 
 const ItemList: React.FC<ItemListProps> = ({ items, selected, onToggle }) => (
-  <ul className="max-h-[400px] overflow-y-auto mb-6" role="list" aria-label="Productenlijst">
+  <ul className="mb-6" role="list" aria-label="Productenlijst">
     {items.map((item) => {
       const isChecked = selected.includes(item);
       return (

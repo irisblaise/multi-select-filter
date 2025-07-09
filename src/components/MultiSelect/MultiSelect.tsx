@@ -4,7 +4,6 @@ import { gqlClient } from '../../graphql/client';
 import { GET_CATEGORIES } from '../../graphql/queries';
 import ItemList from '../ItemList/ItemList';
 import { decodeHtmlEntities } from '../../utils/decodeHtmlEntities';
-import { usePersistentState } from '../../utils/usePersistentState';
 
 interface MultiSelectProps {
   onApply?: (selected: string[]) => void;
@@ -12,7 +11,7 @@ interface MultiSelectProps {
 
 const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
   const [items, setItems] = useState<string[]>([]);
-  const [selected, setSelected] = usePersistentState<string[]>('appliedCategories', []);
+  const [selected, setSelected] = useState<string[]>([]);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -68,6 +67,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ onApply }) => {
         onClick={() => {
           setSelected([]);
           setSearch('');
+          if (onApply) onApply([]);
         }}
         aria-label="Selectie wissen"
         disabled={selected.length === 0}
